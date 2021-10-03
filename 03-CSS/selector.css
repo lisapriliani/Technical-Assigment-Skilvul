@@ -1,0 +1,29 @@
+#daftar-siswa{
+  background-color: gainsboro;
+  color: #F3F4F6;
+  border-color: #e5e5e5;
+  }
+
+  .nama {
+    background-color: gray;
+  }
+  
+  #item1 {
+    background-color: #60A5FA;
+  }
+  #item2 {
+    background-color: #F87171;
+  }
+  p {
+    color :black;
+    font-family: sans-serif;
+  }
+  
+  #daftar-siswa p:hover{
+    color:rgb(0, 0, 0);
+    background-color: #E5E7EB;
+  }
+
+
+
+  

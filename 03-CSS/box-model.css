@@ -1,0 +1,16 @@
+#daftar-siswa {
+    background-color: rgb(86, 98, 131);
+    color: #F3F4F6;
+    border-color: #e5e5e5;
+}
+
+
+.nama > p {
+    padding: 15px 10px;
+    font-weight: 400;
+}
+
+#daftar-siswa p:hover {
+    background-color: #E5E7EB;
+    color: rgb(0, 0, 0);
+}

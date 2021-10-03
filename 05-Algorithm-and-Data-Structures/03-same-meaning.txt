@@ -1,0 +1,16 @@
+START
+
+VAR 1 = posisi awal
+VAR 2 panjang kata
+INPUT X "value string"
+COMPARE VAR 1 == VAR 2
+COUNT X intX=intX+1 =  intY=intY+1
+IF intX+1 < intY 
+	DISPLAY "False"
+OR intX+1 < intY 
+	DISPLAY "True"
+
+END
+
+ 
+
