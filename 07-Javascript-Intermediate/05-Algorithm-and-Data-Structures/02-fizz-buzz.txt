@@ -1,0 +1,14 @@
+START 
+
+INPUT n
+FOR  counter = 1 TO  n
+SET 1 DO
+	DISPLAY n
+WHEN double n = 3 DO
+	DISPLAY "Fizz"
+WHEN double n = 5 DO
+	DISPLAY "Buzz"	
+WHEN 5*3 DO
+	DISPLAY "FizzBuzz"
+
+END

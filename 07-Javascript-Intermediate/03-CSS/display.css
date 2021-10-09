@@ -1,0 +1,26 @@
+.container{
+    display: flex;
+    border: 5px 0cm white;
+    background-color: lightskyblue;
+}
+
+.item {
+    border: 0px solid #000;
+    width: 200px;
+    height: 50px;
+    padding: 15px 10px;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: sans-serif;    
+}
+
+.container > .item{
+        height:auto;
+        font-weight: 400;      
+}
+
+.container > .item:hover{
+    color:rgb(0, 0, 0);
+    background-color: #E5E7EB;
+    }
+   

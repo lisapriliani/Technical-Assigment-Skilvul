@@ -1,0 +1,20 @@
+START
+VAR a = (F) Fahrenheit
+VAR b = (K) Kelvin
+var c = (C) Celcius
+
+INPUT X "value in number" 
+INPUT Y "value in string"
+
+WHEN INPUT Y = VAR c THEN
+	DISPLAY "number" Celcius
+WHEN INPUT Y = VAR b THEN
+	CONVERT Y = (X - 273.15)
+	DISPLAY CONVERT
+WHEN INPUT Y = VAR a THEN
+	CONVERT Y = (x - 32) * (5/9)
+	DISPLAY CONVERT
+END
+
+
+

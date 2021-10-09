@@ -1,0 +1,12 @@
+1. git-clean berfungsi Hapus file yang tidak terlacak dari branch
+2. git clean -f digunakan untuk menghapus file, sedangkan git clean -d digunakan untuk menghapus folder
+3. git branch <nama branch>
+4. Dalam penggabungan Rekursif, setelah membuat beberapa commite, ada beberapa commite asli baru di master yang berarti git gabungan memiliki dua parent. 
+Sedangkan merge forward hanya satu garis lurus. Saat membuat branch dan membuat beberapa komit di cabang itu, tidak ada penggabungan baru di master.
+5. git checkout <nama branch>
+6. git clean
+7. git branch -d <nama branch>
+8. Perintah git diff memberitahu apa saja perubahan yang terjadi di antara dua commit
+9. git checkout <nama file>
+10. Ketika beberapa developer mengerjakan di branch yang sama misalnya developer 1 
+mengubah sesuatu di branch, developer lain melakukan perubahan juga pada branch main/master

@@ -1,0 +1,11 @@
+1. https://drive.google.com/file/d/13yGBP_FnQD7_E1C7-L-nhPe-1_EemSZB/view?usp=sharing
+2. git clone https://github.com/lisapriliani/tech4impact-students-bio.git
+3. git branch lisa
+4. git checkout lisa
+5. code . 
+6. https://drive.google.com/file/d/1fCtQ9kS6XcqrqjsfStUppxisyOOmY_Wl/view?usp=sharing
+7. git add lisapriliani.md
+8. git commit -m "adding lisapriliani.md"
+9. git merge master
+10. git push origin lisa
+11. https://drive.google.com/file/d/1k7faEtIPeWl3Yz_YFckMDRQ_3JYtHRjM/view?usp=sharing

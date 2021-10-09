@@ -1,0 +1,4 @@
+1. Perintah git reset , akan mengembalikan file ke kondisi sebelumnya, kemudian menghapus catatan history commit berikutnya. Sedangkan perintah git revert mengembalikan file tetapi tidak menghapus history commit.
+2. Git merge digunakan untuk menyatukan dua atau lebih cabang histori komit. Sedangkan  Git rebase digunakan untuk memindahkan cabang dari satu lokasi ke lokasi lain
+3. Git stash pop ditgunakan untuk membuang simpanan , sedangkan git stash apply menyimpannya di daftar simpanan untuk kemungkinan nanti digunakan kembali 
+4. Rebasing interaktif dapat digunakan untuk mengubah komit seperti mengedit, menghapus, dan meringkas
