@@ -1,0 +1,19 @@
+Kamu diminta untuk melakukan analisa sederhana terhadap beberapa masalah dan tuliskan jawaban kamu di dalam file 08-bootstrap-soal-01.txt.
+
+1. Apa itu CSS Framework?
+   CSS framework adalah kerangka yang siap digunakan yang berfungsi untuk memudahkan 
+   developer ketika mendesain website atau aplikasi
+
+2. Apakah bootstrap satu-satunya CSS Framework yang dapat kita gunakan?
+   Tidak 
+
+3. Sebutkan beberapa CSS Framework selain Bootstrap
+   MaterializeUI, SemanticUI, Tailwind, UI Kit
+
+4. Bagaimana tata cara penggunaan Bootstrap?
+   Ada 2 cara penggunaan bootstrap yaitu online dan offline,
+   - Secara online yaitu dengan memanggil Bootstrap secara online menggunakan CDN, 
+     dengan sintaks yang telah disediakan dalam dokumentasi bootstrap
+   - Mendownload bootstrap dan dimasukan kedalam sebuah file khusus css, pemanggilannya
+     seperti menggunakan css biasa melalui href
+   
