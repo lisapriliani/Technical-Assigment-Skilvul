@@ -1,25 +1,92 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import CardProduct from "./components/CardProduct";
+import CartListItem from "./components/CartListItem";
+import Navbar from "./components/Navbar";
 
-function App() {
+import menus from "./dummy-data";
+
+export default function App() {
+  const [total, setTotal] = useState(0);
+  const [purchasedItem, setPurchasedItem] = useState(0);
+  const [cart, setCart] = useState([]);
+
+  useEffect(() => {
+    setPurchasedItem(cart.reduce((previous, current) => current.amount + previous, 0));
+    setTotal(cart.reduce((previous, current) => current.amount * current.price + previous, 0));
+  });
+
+  //Fungsi addToCart
+
+  const addToCart = (id) => {
+    const menu = menus.find((menu) => menu.id === id);
+    const cartById = cart.find((cart) => cart.id === id);
+
+    if (cartById) {
+      increaseCartAmount(id);
+    } else {
+      setCart([
+        ...cart,
+        {
+          id,
+          name: menu.name,
+          price: menu.price,
+          amount: 1,
+        },
+      ]);
+    }
+  };
+
+  const decreaseCartAmount = (id) => {
+    const cartById = cart.find((cart) => cart.id === id);
+    cartById.amount--;
+  };
+
+  const increaseCartAmount = (id) => {
+    const cardId = cart.find((cart) => cart.id === id);
+
+    cardId.amount++;
+
+    const cartNotActiveId = cart.filter((cart) => cart.id !== id);
+
+    setCart([...cartNotActiveId, cardId]);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="bg-secondary">
+      <Navbar totalItem={purchasedItem} />
+      <div className="container py-5">
+        <div className="row">
+          <div className="col-md-8">
+            <div className="card w-100">
+              <div className="card-body">
+                <div className="row">
+                  {menus.map((menu) => (
+                    <div key={menu.id} className="col-md-4 col-sm-6 col-12 my-2">
+                      <CardProduct {...menu} addToCart={() => addToCart(menu.id)} />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-4">
+            <ol className="list-group">
+              {cart.map((c) => {
+                return <CartListItem key={c.id} {...c} increase={() => increaseCartAmount(c.id)} decrease={() => decreaseCartAmount(c.id)} />;
+              })}
+              <li className="list-group-item d-flex justify-content-between align-items-start">
+                <div className="ms-2 me-auto">
+                  <div className="fw-bold">Total Harga</div>
+                </div>
+                {new Intl.NumberFormat("en-US", {
+                  style: "currency",
+                  currency: "USD",
+                }).format(total)}
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
-
-export default App;
