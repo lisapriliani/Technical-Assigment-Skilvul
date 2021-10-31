@@ -39,6 +39,14 @@ export default function App() {
   const decreaseCartAmount = (id) => {
     const cartById = cart.find((cart) => cart.id === id);
     cartById.amount--;
+
+    const cartNotActiveId = cart.filter((cart) => cart.id !== id);
+
+    if (cartById.amount <= 0) {
+      setCart(cartNotActiveId);
+    } else {
+      setCart([...cartNotActiveId, cartById]);
+    }
   };
 
   const increaseCartAmount = (id) => {
