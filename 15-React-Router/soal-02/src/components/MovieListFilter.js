@@ -4,9 +4,8 @@ import qs from "qs";
 
 const MovieListFilter = () => {
   // Variable yang akan menampung parameter yang telah diberikan oleh user
-
-  const location = useLocation();
   const history = useHistory();
+  const location = useLocation();
 
   const params = qs.parse(location.search, { ignoreQueryPrefix: true });
 
@@ -25,9 +24,9 @@ const MovieListFilter = () => {
             Category
           </label>
           <select id="category" className="form-select" aria-label="Default select example" onChange={(e) => setCategory(e.target.value)} defaultValue={category}>
-            {categories.map((c, id) => (
-              <option key={id} value={c}>
-                {c}
+            {categories.map((category, id) => (
+              <option key={id} value={category}>
+                {category}
               </option>
             ))}
           </select>
@@ -37,9 +36,9 @@ const MovieListFilter = () => {
             Show
           </label>
           <select id="show" className="form-select" aria-label="Default select example" onChange={(e) => setShow(e.target.value)} defaultValue={show}>
-            {shows.map((s, id) => (
-              <option key={id} value={s}>
-                {s}
+            {shows.map((show, id) => (
+              <option key={id} value={show}>
+                {show}
               </option>
             ))}
           </select>
@@ -49,9 +48,9 @@ const MovieListFilter = () => {
             Sort By
           </label>
           <select id="show" className="form-select" aria-label="Default select example" onChange={(e) => setSortBy(e.target.value)} defaultValue={sortBy}>
-            {fields.map((f, id) => (
-              <option key={id} value={f}>
-                {f}
+            {fields.map((field, id) => (
+              <option key={id} value={field}>
+                {field}
               </option>
             ))}
           </select>
