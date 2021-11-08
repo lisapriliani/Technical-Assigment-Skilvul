@@ -4,7 +4,14 @@ import Item3 from "../images/corn.jpg";
 import Item4 from "../images/garlic.jpg";
 import Item5 from "../images/red-chili.jpg";
 import Item6 from "../images/tomato.jpg";
-import { ADD_TO_CART, REMOVE_ITEM, SUB_QUANTITY, ADD_QUANTITY, ADD_SHIPPING, SUB_SHIPPING } from "../actions/action-types/cartActions";
+import {
+  ADD_TO_CART,
+  REMOVE_ITEM,
+  SUB_QUANTITY,
+  ADD_QUANTITY,
+  ADD_SHIPPING,
+  SUB_SHIPPING,
+} from "../actions/action-types/cartActions";
 
 const initState = {
   items: [
@@ -57,8 +64,8 @@ const initState = {
 const cartReducer = (state = initState, action) => {
   //INSIDE HOME COMPONENT
   if (action.type === ADD_TO_CART) {
-    const addedItems = state.items.find((item) => item.id === action.id);
-    const existedItem = state.addedItems.find((item) => action.id === item.id);
+    let addedItems = state.items.find((item) => item.id === action.id);
+    let existedItem = state.addedItems.find((item) => action.id === item.id);
 
     if (existedItem) {
       addedItems.quantity += 1;
@@ -68,7 +75,7 @@ const cartReducer = (state = initState, action) => {
       };
     } else {
       addedItems.quantity = 1;
-      const newTotal = state.total + addedItems.price;
+      let newTotal = state.total + addedItems.price;
 
       return {
         ...state,
@@ -92,11 +99,11 @@ const cartReducer = (state = initState, action) => {
   }
   //INSIDE CART COMPONENT
   if (action.type === ADD_QUANTITY) {
-    const addedItems = state.items.find((item) => item.id === action.id);
+    let addedItems = state.items.find((item) => item.id === action.id);
 
     addedItems.quantity += 1;
 
-    const newTotal = state.total + addedItems.price;
+    let newTotal = state.total + addedItems.price;
 
     return {
       ...state,
@@ -104,11 +111,11 @@ const cartReducer = (state = initState, action) => {
     };
   }
   if (action.type === SUB_QUANTITY) {
-    const addItem = state.items.find((item) => item.id === action.id);
+    let addItem = state.items.find((item) => item.id === action.id);
 
     if (addItem.quantity === 1) {
-      const newItem = state.addedItems.filter((item) => item.id !== action.id);
-      const newTotal = state.total - addItem.price;
+      let newItem = state.addedItems.filter((item) => item.id !== action.id);
+      let newTotal = state.total - addItem.price;
 
       return {
         ...state,
@@ -117,7 +124,7 @@ const cartReducer = (state = initState, action) => {
       };
     } else {
       addItem.quantity -= 1;
-      const newTotal = state.total - addItem.price;
+      let newTotal = state.total - addItem.price;
 
       return {
         ...state,
@@ -127,11 +134,19 @@ const cartReducer = (state = initState, action) => {
   }
 
   if (action.type === ADD_SHIPPING) {
-    // Add code here (OPTIONAL)
+    return {
+      ...state,
+      total: state.total + 6,
+    };
   }
 
   if (action.type === SUB_SHIPPING) {
-    // Add code here (OPTIONAL)
+    return {
+      ...state,
+      total: state.total - 6,
+    };
+  } else {
+    return state;
   }
 };
 
