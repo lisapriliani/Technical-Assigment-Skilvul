@@ -5,5 +5,5 @@ https://codesandbox.io/s/reverent-sutherland-4u8o3?file=/src/index.js
 
 
 
-<p>full code :</p>
+<p>soal no 2 on this link :</p>
 https://github.com/lisapriliani/Technical-Assigment-React-Basic
